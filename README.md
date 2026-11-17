@@ -65,6 +65,4 @@ To write and execute an Assembly language program for finding the cube of a give
 
 ## RESULT
 Thus, the cube of the given data is calculated using 8051 Keil.
-- Keil μVision IDE
 
-## ALGORITHM
