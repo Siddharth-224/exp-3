@@ -50,18 +50,37 @@ To write and execute an Assembly language program for finding the cube of a give
 
 ## PROGRAM
 ```
+ORG 0000H
 
+        MOV R4,#04H
 
+AGAIN:  MOV R3,#04H
+        MOV R0,#30H
 
+LOOP1:  MOV A,@R0
+        MOV B,A
+        INC R0
+        MOV A,@R0
+        CJNE A,B,CONTINUE
 
+CONTINUE:
+        JC SKIP
+        MOV @R0,B
+        DEC R0
+        MOV @R0,A
+        INC R0
 
+SKIP:   DJNZ R3,LOOP1
+        DJNZ R4,AGAIN
 
+STOP:   SJMP STOP
 
-
+END
 ```
 
-
 ## OUTPUT
+
+<img width="1600" height="897" alt="image" src="https://github.com/user-attachments/assets/9b191a8e-7458-4cfb-b600-9721b2b1914d" />
 
 ## RESULT
 Thus, the cube of the given data is calculated using 8051 Keil.
